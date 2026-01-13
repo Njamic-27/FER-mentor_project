@@ -1,0 +1,16 @@
+ogr2ogr:
+    OSM input driver: https://gdal.org/en/stable/drivers/vector/osm.html
+
+OSM Croatia:
+    Data: https://download.geofabrik.de/europe/croatia.html
+
+Sedona:
+    Performance benchamrk: https://wherobots.com/wp-content/uploads/2023/10/SedonaDB_Performance_Benchmark.pdf
+    Docker: https://hub.docker.com/r/apache/sedona
+    https://forrest.nyc/how-to-run-scalable-geospatial-analysis-with-apache-sedona-right-from-your-laptop/
+    sparkmeasure: https://github.com/LucaCanali/sparkMeasure
+    Built-in pbf reader: https://sedona.apache.org/latest/tutorial/sql/#__tabbed_11_3
+
+osm-parquetizer:
+    Blog: https://adrianulbona.github.io/2016/12/18/osm-parquetizer.html
+    Github: https://github.com/adrianulbona/osm-parquetizer
