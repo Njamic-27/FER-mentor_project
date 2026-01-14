@@ -26,7 +26,10 @@ class Exporter:
 
         gdf = geopandas.GeoDataFrame(
             data=rows,
-            columns=["osm_id", "tags"],
+            columns=[
+                "osm_id",
+                "tags"
+            ],
             geometry=geometry,
         )
 
