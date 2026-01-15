@@ -22,6 +22,10 @@ class PbfLoader(Loader):
     def load_dataframe(self, data_path: str) -> pyspark.sql.DataFrame:
         return self._spark_session.read.format("osmpbf").load(data_path)
 
+class OsmLoader(Loader):
+    def load_dataframe(self, data_path: str) -> pyspark.sql.DataFrame:
+        return self._spark_session.read.format("osm").load(data_path)
+
 
 class ParquetLoader(Loader):
     def load_dataframe(self, data_path: str) -> pyspark.sql.DataFrame:

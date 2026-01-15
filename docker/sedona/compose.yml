@@ -1,6 +1,9 @@
 services:
   sedona:
-    image: apache/sedona
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fer/sedona:dev
     container_name: sedona
 
     volumes:
