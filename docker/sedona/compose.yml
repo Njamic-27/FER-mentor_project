@@ -8,6 +8,10 @@ services:
         source: ./docker-shared-data
         target: /docker-shared-data
 
+      - type: bind
+        source: ../../src
+        target: /docker-shared-data/src
+
       - type: volume
         source: sedona-opt
         target: /opt
