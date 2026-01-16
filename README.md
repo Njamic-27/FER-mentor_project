@@ -80,3 +80,9 @@ Tasks:
 - `scripts`: scripts
 - `sedona_fer`: benchmarking and related functionality
 - `pyosmium`: failed attempt to use "pyosmium" package to create geometries. Extremely slow.
+
+
+## 5. Design decisions
+
+- geometries are constructed explicitly in sedona because for large datasets (see: https://download.geofabrik.de/europe.html) other tools are either too slow (pyosmium) or unable to create geometries (ogr2ogr).
+- there is no good reason this project uses docker container. It was just in case it turns out there's many dependencies. This could've been python virtual environment afterall.
