@@ -1,9 +1,7 @@
-import sys
-sys.path.append("/docker-shared-data/src/bench")    # TODO: fix module imports
-import import_export
+from sedona_fer.data import import_export
 
 
-PARQUET_PATH = "/docker-shared-data/geom/zagreb01/zagreb01_points.parquet"
+PARQUET_PATH = "/dev-root/maps/map_ways.parquet"
 
 import pyspark.sql
 import sedona.spark

@@ -1,11 +1,9 @@
-import sys
 import argparse
 from pathlib import Path
 
-sys.path.append("/docker-shared-data/src/bench")    # TODO: fix module imports
-import import_export
-import geom
-import util
+import sedona_fer.data.import_export
+import sedona_fer.data.geom
+import sedona_fer.util
 
 import pyspark.sql
 import sedona.spark
@@ -48,17 +46,17 @@ def main():
     spark_session = sedona.spark.SedonaContext.create(spark=spark)
 
     if src_file.endswith(".osm"):
-        loader = import_export.OsmLoader(spark_session=spark_session)
+        loader = sedona_fer.data.import_export.OsmLoader(spark_session=spark_session)
     elif src_file.endswith(".pbf") or src_file.endswith(".osm.pbf"):
-        loader = import_export.PbfLoader(spark_session=spark_session)
+        loader = sedona_fer.data.import_export.PbfLoader(spark_session=spark_session)
     else:
         raise ValueError(f"Unsupported file format: {src_file}")
 
     df = loader.load_dataframe(data_path=src_file)
 
-    geom_maker = geom.GeometryMaker(spark_session=spark_session)
+    geom_maker = sedona_fer.data.geom.GeometryMaker(spark_session=spark_session)
 
-    filename_without_extension = util.get_filename_without_extension(src_file)
+    filename_without_extension = sedona_fer.util.get_filename_without_extension(src_file)
 
     # Points
     points = geom_maker.process_points(df)

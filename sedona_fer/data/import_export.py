@@ -2,16 +2,16 @@ import sedona.sql.types
 import pyspark.sql
 from pyspark.sql import SparkSession
 
-import util
+import sedona_fer.util
 import subprocess
-import io
 import os
+
 
 class LoaderError(Exception):
     pass
 
 
-class Loader(util.LoggingMixin):
+class Loader(sedona_fer.util.LoggingMixin):
     def __init__(self, spark_session: SparkSession):
         self._spark_session = spark_session
         super().__init__()
@@ -37,7 +37,7 @@ class OsmLoader(Loader):
         os.makedirs(self._cached_maps_dir, exist_ok=True)
 
     def load_dataframe(self, data_path: str) -> pyspark.sql.DataFrame:
-        in_filename_without_ext = util.get_filename_without_extension(data_path)
+        in_filename_without_ext = sedona_fer.util.get_filename_without_extension(data_path)
         pbf_file_path = f"{os.path.join(self._cached_maps_dir, in_filename_without_ext)}.pbf"
         
         if os.path.exists(pbf_file_path):
@@ -84,7 +84,7 @@ class ParquetLoader(Loader):
         return df
 
 
-class Writer(util.LoggingMixin):
+class Writer(sedona_fer.util.LoggingMixin):
     def __init__(self, spark_session: SparkSession):
         self._spark_session = spark_session
         super().__init__()

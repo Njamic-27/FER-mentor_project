@@ -1,9 +1,9 @@
 import pyspark.sql
 
-import util
+import sedona_fer.util
 
 
-class GeometryMaker(util.LoggingMixin):
+class GeometryMaker(sedona_fer.util.LoggingMixin):
     def __init__(self, spark_session: pyspark.sql.SparkSession):
         self._spark_session = spark_session
         super().__init__()

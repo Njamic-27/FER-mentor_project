@@ -6,7 +6,7 @@
             "type": "shell",
             "command": "python3",
             "args": [
-                "${workspaceFolder}/src/scripts/python/create_geometries.py",
+                "${workspaceFolder}/scripts/python/create_geometries.py",
                 "--src-file", "${input:srcFile}",
                 "--out-geom-dir", "${input:outGeomDir}"
             ],
@@ -14,6 +14,14 @@
                 "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [],
+        },
+        {
+            "label": "pwd",
+            "type": "shell",
+            "command": "pwd",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
         }
     ],
     "inputs": [
