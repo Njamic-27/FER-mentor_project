@@ -14,3 +14,7 @@ Sedona:
 osm-parquetizer:
     Blog: https://adrianulbona.github.io/2016/12/18/osm-parquetizer.html
     Github: https://github.com/adrianulbona/osm-parquetizer
+
+log4j:
+    article: https://medium.com/@cupreous.bowels/logging-in-spark-with-log4j-how-to-customize-a-driver-and-executors-for-yarn-cluster-mode-1be00b984a7c
+    doc: https://logging.apache.org/log4j/2.x/manual/configuration.html
