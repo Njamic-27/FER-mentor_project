@@ -5,7 +5,7 @@ import util
 
 class GeometryMaker(util.LoggingMixin):
     def __init__(self, spark_session: pyspark.sql.SparkSession):
-        self.spark_session = spark_session
+        self._spark_session = spark_session
         super().__init__()
 
 
